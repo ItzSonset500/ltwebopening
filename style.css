@@ -1,0 +1,284 @@
+/* ========== RESET & BASE ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f4f8;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 16px;
+}
+
+/* ========== HEADER ========== */
+header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: #2d6a4f;
+  font-weight: 700;
+}
+
+header p {
+  color: #6c757d;
+  font-size: 0.95rem;
+  margin-top: 4px;
+}
+
+/* ========== WRAPPER ========== */
+.container {
+  width: 100%;
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ========== CARD CHUNG ========== */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.card h2 {
+  font-size: 1rem;
+  color: #2d6a4f;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ========== FORM THÊM CÔNG VIỆC ========== */
+#task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#task-form label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 4px;
+  display: block;
+}
+
+#task-form input[type="text"],
+#task-form input[type="date"],
+#task-form select {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid #d0d7de;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+  background-color: #fafafa;
+}
+
+#task-form input:focus,
+#task-form select:focus {
+  border-color: #2d6a4f;
+  background-color: #fff;
+}
+
+#task-form button[type="submit"] {
+  padding: 11px;
+  background-color: #2d6a4f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+#task-form button[type="submit"]:hover {
+  background-color: #1b4332;
+}
+
+#task-form button[type="submit"]:active {
+  transform: scale(0.98);
+}
+
+/* ========== THANH LỌC & TÌM KIẾM ========== */
+.controls {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.controls input,
+.controls select {
+  flex: 1;
+  min-width: 140px;
+  padding: 10px 14px;
+  border: 1.5px solid #d0d7de;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  outline: none;
+  background-color: #fafafa;
+  transition: border-color 0.2s;
+}
+
+.controls input:focus,
+.controls select:focus {
+  border-color: #2d6a4f;
+  background-color: #fff;
+}
+
+/* ========== DANH SÁCH CÔNG VIỆC ========== */
+#task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#task-list:empty::after {
+  content: "Chưa có công việc nào.";
+  text-align: center;
+  color: #aaa;
+  font-style: italic;
+  padding: 20px 0;
+  display: block;
+}
+
+/* ========== TỪNG TASK ITEM ========== */
+.task-item {
+  background: #fff;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.07);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  border-left: 5px solid #2d6a4f;
+  transition: box-shadow 0.2s;
+}
+
+.task-item:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+
+.task-item.completed {
+  border-left-color: #adb5bd;
+  opacity: 0.75;
+}
+
+.task-info {
+  flex: 1;
+}
+
+.task-info h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 4px;
+}
+
+.task-info p {
+  font-size: 0.82rem;
+  color: #6c757d;
+  margin-top: 2px;
+}
+
+/* ========== BADGE ƯU TIÊN ========== */
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.badge-cao    { background: #ffe3e3; color: #c0392b; }
+.badge-tb     { background: #fff3cd; color: #856404; }
+.badge-thap   { background: #d1fae5; color: #065f46; }
+
+/* ========== NÚT HÀNH ĐỘNG ========== */
+.task-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.task-actions button {
+  padding: 7px 14px;
+  border: none;
+  border-radius: 7px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.task-actions button:active {
+  transform: scale(0.96);
+}
+
+.btn-toggle {
+  background-color: #e9f5ef;
+  color: #2d6a4f;
+}
+
+.btn-toggle:hover {
+  background-color: #b7e4c7;
+}
+
+.btn-delete {
+  background-color: #fde8e8;
+  color: #c0392b;
+}
+
+.btn-delete:hover {
+  background-color: #f5c6c6;
+}
+
+/* ========== FOOTER ========== */
+footer {
+  margin-top: 32px;
+  text-align: center;
+  color: #aaa;
+  font-size: 0.82rem;
+}
+
+/* ========== RESPONSIVE (375px) ========== */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.4rem;
+  }
+
+  .task-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .task-actions {
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .task-actions button {
+    flex: 1;
+  }
+
+  .controls {
+    flex-direction: column;
+  }
+}
